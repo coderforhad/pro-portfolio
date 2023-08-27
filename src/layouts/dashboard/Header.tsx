@@ -6,7 +6,6 @@ import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { Grid, Typography } from "@mui/material";
 import {useThemeModeContext} from "../../pages/_app"
-import { useState } from "react";
 
 const Header = () => {
   const { themeMode, setThemeMode } = useThemeModeContext();

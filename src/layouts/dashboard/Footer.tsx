@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div style={{textAlign: "center", marginTop:"12vh"}}>
+    <div style={{fontFamily: "Pacifico", textAlign: "center"}}>
       Copyright &copy; {1900 + new Date().getYear()}
       <a href="https://bd.linkedin.com/in/forhadahmedcse"> {" "}
         Forhad Ahmed
