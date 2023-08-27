@@ -7,7 +7,7 @@ export const HeaderMainBox = styled("div")({
   padding: "10px 10% 20px 10%",
 });
 
-export const HeaderSubBox = styled(Box)(({theme})=>({
+export const HeaderSubBox = styled(Box)(({ theme }) => ({
   padding: "20px",
   borderRadius: "50%",
   background: theme.palette.background.paper,
@@ -17,9 +17,9 @@ export const HeaderSubBox = styled(Box)(({theme})=>({
   justifyContent: "center",
 }));
 
-export const LayoutMainBox = styled(Box)(({theme})=> console.log("From style", theme) || ({
-  height: "100%"
-}));
+export const LayoutMainBox = styled(Box)({
+  height: "100%",
+});
 export const LayoutSubBox = styled(Box)({
   alignItems: "flex-start",
   justifyContent: "center",
@@ -41,14 +41,15 @@ export const TitleRole = styled(Typography)({
   // color: "rgba(11, 9, 9, 0.50)",
   padding: "8px 0px 0px 0px",
 });
-export const SocialGrid = styled(Grid)(({theme})=>({
+export const SocialGrid = styled(Grid)(({ theme }) => ({
   background: theme.palette.background.default,
   ":hover": {
-    background: theme.palette.mode === "dark" ? theme.palette.info.contrastText : theme.palette.grey[400],
+    background:
+      theme.palette.mode === "dark" ? theme.palette.info.contrastText : theme.palette.grey[400],
   },
   borderRadius: "8.269px",
   padding: "10px",
-  cursor:"pointer"
+  cursor: "pointer",
 }));
 
 export const InfoGrid = styled(Grid)({
@@ -69,7 +70,7 @@ export const Info = styled(Typography)({
   fontWeight: 600,
 });
 
-export const TopBox = styled(Box)(({theme})=>({
+export const TopBox = styled(Box)(({ theme }) => ({
   float: "right",
   display: "flex",
   alignItems: "center",
