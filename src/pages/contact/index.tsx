@@ -33,7 +33,7 @@ const Contact = () => (
               <CardContent xs={12}>
                 <Grid xs={12} style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                   <Typography variant="title">Contact</Typography>
-                  <div style={{ background: "#FE9119", width: "20%", height: "4px" }}></div>
+                  <div style={{ background: "#06AED4", width: "20%", height: "4px" }}></div>
                 </Grid>
                 <Typography>
                   Hello there! Im thrilled to welcome you to my portfolio. I am a passionate and
