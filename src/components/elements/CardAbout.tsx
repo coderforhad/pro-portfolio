@@ -1,13 +1,14 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const CardAbout = ({ title, content, icon, color}) => {
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.up("sm"));
   return (
     <Box
       sx={{
         height: "100%",
-        width:"49%",
+        width: lgUp ? "49%" : "100%",
         borderRadius: "20px",
         background: ((theme)=> theme.palette.mode === "dark" ? theme.palette.background.default : `${color}`),
         padding: "10px",
