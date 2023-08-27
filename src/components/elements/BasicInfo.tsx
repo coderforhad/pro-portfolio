@@ -9,52 +9,36 @@ import locationIcon from "/public/images/others/location.svg";
 const BasicInfo = () => {
   return (
     <>
-
-          <InfoGrid>
-            <Grid>
-              <Image 
-                height={20} 
-                width={20} 
-                src={phoneIcon} 
-                alt="Phone" 
-              />
-            </Grid>
-            <Grid>
-              <InfoTitle>Phone</InfoTitle>
-              <Info>+254723909353</Info>
-            </Grid>
-          </InfoGrid>
-          <hr />
-          <InfoGrid>
-            <Grid>
-              <Image 
-                height={20} 
-                width={20} 
-                src={emailIcon} 
-                alt="Email" 
-              />
-            </Grid>
-            <Grid>
-              <InfoTitle>Email</InfoTitle>
-              <Info>beatricewambuimbugua@gmail.com</Info>
-            </Grid>
-          </InfoGrid>
-          <hr />
-          <InfoGrid>
-            <Grid>
-              <Image 
-                height={20} 
-                width={20} 
-                src={locationIcon} 
-                alt="Location" 
-              />
-            </Grid>
-            <Grid>
-              <InfoTitle>Location</InfoTitle>
-              <Info>Nairobi, Kenya</Info>
-            </Grid>
-          </InfoGrid>
-
+      <InfoGrid>
+        <Grid>
+          <Image height={20} width={20} src={phoneIcon} alt="Phone" />
+        </Grid>
+        <Grid>
+          <InfoTitle>Phone</InfoTitle>
+          <Info>+254723909353</Info>
+        </Grid>
+      </InfoGrid>
+      <hr style={{ width: "90%" }} />
+      <InfoGrid>
+        <Grid>
+          <Image height={20} width={20} src={emailIcon} alt="Email" />
+        </Grid>
+        <Grid>
+          <InfoTitle>Email</InfoTitle>
+          <Info>beatricewambuimbugua@gmail.com</Info>
+        </Grid>
+      </InfoGrid>
+      <hr style={{ width: "90%" }} />
+      <InfoGrid>
+        <Grid>
+          <Image height={20} width={20} src={locationIcon} alt="Location" />
+        </Grid>
+        <Grid>
+          <InfoTitle>Location</InfoTitle>
+          <Info>Nairobi, Kenya</Info>
+        </Grid>
+      </InfoGrid>
+      <hr style={{ width: "90%" }} />
     </>
   );
 };

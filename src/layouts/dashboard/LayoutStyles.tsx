@@ -10,7 +10,7 @@ export const HeaderMainBox = styled("div")({
 export const HeaderSubBox = styled(Box)(({theme})=>({
   padding: "20px",
   borderRadius: "50%",
-  // background: "#EBF2FA",
+  background: theme.palette.background.paper,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.25)",
   display: "flex",
   alignItems: "center",

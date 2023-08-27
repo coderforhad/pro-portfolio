@@ -1,16 +1,21 @@
 import React from "react";
 import { HeaderMainBox, HeaderSubBox } from "./LayoutStyles";
-import Image from "next/image";
 //@ts-ignore
-import modeIcon from "/public/images/others/modebutton.svg";
 //@ts-ignore
-import logoIcon from "/public/images/others/logo_web.png";
+import NightsStayIcon from "@mui/icons-material/NightsStay";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { Grid, Typography } from "@mui/material";
+import {useThemeModeContext} from "../../pages/_app"
+import { useState } from "react";
 
 const Header = () => {
+  const { themeMode, setThemeMode } = useThemeModeContext();
+  const handleClick = () => {
+    const newThemeMode = themeMode === "light" ? "dark" : "light";
+    setThemeMode(newThemeMode);
+  };
   return (
     <HeaderMainBox>
-      {/* <Image height={40} width={250} src={logoIcon} alt="mode button" /> */}
       <Grid>
         <Typography
           sx={{
@@ -21,35 +26,32 @@ const Header = () => {
             gap: "5px",
           }}
         >
-          Beatrice <Typography  sx={{
-            fontFamily: "Pacifico",
-            fontSize: "30px",
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            color:(theme=> theme.palette.info.main)
-          }}>Wambui</Typography>
+          Beatrice{" "}
+          <Typography
+            sx={{
+              fontFamily: "Pacifico",
+              fontSize: "30px",
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+              color: (theme) => theme.palette.info.main,
+            }}
+          >
+            Wambui
+          </Typography>
         </Typography>
       </Grid>
       <HeaderSubBox
         sx={{
           ":hover": {
-            background: "linear-gradient(127deg, #000 0%, #E80505 100%)",
-            color: "white",
+            background: (theme) => theme.palette.background.default,
             transition: "all 0.3s",
           },
           cursor: "pointer",
         }}
+        onClick={handleClick}
       >
-        <Image
-          style={{
-            borderRadius: "50%",
-          }}
-          height={20}
-          width={20}
-          src={modeIcon}
-          alt="mode button"
-        />
+        {themeMode==="light" ? <Brightness4Icon /> : <NightsStayIcon />}
       </HeaderSubBox>
     </HeaderMainBox>
   );

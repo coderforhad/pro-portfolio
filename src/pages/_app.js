@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React, { createContext, useContext, useState } from 'react';
 import { CacheProvider } from "@emotion/react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
@@ -10,27 +11,30 @@ import { createTheme } from "src/theme";
 import { createEmotionCache } from "src/utils/create-emotion-cache";
 import "simplebar-react/dist/simplebar.min.css";
 
+const ThemeModeContext = createContext();
+export const useThemeModeContext = () => useContext(ThemeModeContext);
 const clientSideEmotionCache = createEmotionCache();
 
 const SplashScreen = () => null;
 
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const [themeMode, setThemeMode] = useState('light');
 
   useNProgress();
 
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  const theme = createTheme("dark");
+  const theme = createTheme(themeMode);
 
   return (
     <CacheProvider value={emotionCache}>
       <Head>
         <title>Devias Kit</title>
-        <meta 
-          name="viewport" 
+        <meta
+          name="viewport"
           content="initial-scale=1, 
-          width=device-width" 
+          width=device-width"
         />
       </Head>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -38,9 +42,12 @@ const App = (props) => {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <AuthConsumer>
-              {(auth) =>
-                auth.isLoading ? <SplashScreen /> : getLayout(<Component {...pageProps} />)
-              }
+              {(auth) => (
+                <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
+                  {auth.isLoading ? <SplashScreen /> : getLayout(
+                  <Component {...pageProps} />)}
+                </ThemeModeContext.Provider>
+              )}
             </AuthConsumer>
           </ThemeProvider>
         </AuthProvider>
