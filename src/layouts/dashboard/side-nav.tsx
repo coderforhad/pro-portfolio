@@ -8,9 +8,7 @@ import SocialTab from "src/components/elements/SocialTab";
 import BasicInfo from "src/components/elements/BasicInfo";
 import DownloadButton from "src/components/elements/DownloadButton";
 
-export const SideNav = (props) => {
-  const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
-
+export const SideNav = () => {
   return (
     <div style={{ zIndex: 1, position: "relative" }}>
       <Card sx={{ margin: "30% 0% 5% 0%" }}>
@@ -32,8 +30,8 @@ export const SideNav = (props) => {
           <TitleName>Beatrice Wambui</TitleName>
           <TitleRole>FullStack Developer</TitleRole>
           <SocialTab />
-          <Card>
-            <CardContent sx={{ background: "#F2F5F9" }}>
+          <Card>            
+            <CardContent sx={{ background: ((theme)=> theme.palette.background.default) }}> 
               <BasicInfo />
               <Grid sx={{ textAlign: "center", margin: "20px 0px 0px" }}>
                 <DownloadButton />

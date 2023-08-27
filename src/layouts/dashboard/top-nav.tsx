@@ -26,10 +26,10 @@ export const TopNav = () => {
         <TopMenuBox
           sx={{
             background:
-              active === item.id ? "linear-gradient(127deg, #FF9C1A 0%, #E80505 100%)" : "#E1E8EF",
+              active === item.id ? ((theme)=> theme.palette.info.main) : "#E1E8EF",
             color: active === item.id ? "" : "Black",
             ":hover": {
-              background: "linear-gradient(127deg, #FF9C1A 0%, #E80505 100%)",
+              background: theme=> theme.palette.info.main,
               color: "white",
               transition: "all 0.3s"
             },

@@ -7,22 +7,18 @@ const DownloadButton = () => {
   return (
     <Button
       sx={{
-        background: "linear-gradient(127deg, #FF9C1A 0%, #E80505 100%)",
-        color: "#F2F7FC",
+        background: (theme) => theme.palette.info.main,
+        color: (theme) => theme.palette.info.light,
+        ":hover": { background: (theme) => theme.palette.info.dark },
         fontFamily: "Raleway",
         fontSize: "12px",
         fontWeight: 600,
         borderRadius: "50px",
       }}
     >
-      <Image 
-        height={25} 
-        width={25} 
-        src={downloadIcon} 
-        alt="download" 
-      />
+      <Image height={25} width={25} src={downloadIcon} alt="download" />
       &nbsp;&nbsp;Download Resume
     </Button>
   );
 };
-export default DownloadButton
+export default DownloadButton;

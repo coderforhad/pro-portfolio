@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
-import codeIcon from "/public/images/others/code_icon.svg";
 import CardAbout from "src/components/elements/CardAbout";
 import { whatTodo } from "src/demo-data/About";
 

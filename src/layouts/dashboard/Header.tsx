@@ -5,11 +5,32 @@ import Image from "next/image";
 import modeIcon from "/public/images/others/modebutton.svg";
 //@ts-ignore
 import logoIcon from "/public/images/others/logo_web.png";
+import { Grid, Typography } from "@mui/material";
 
 const Header = () => {
   return (
     <HeaderMainBox>
-      <Image height={40} width={250} src={logoIcon} alt="mode button" />
+      {/* <Image height={40} width={250} src={logoIcon} alt="mode button" /> */}
+      <Grid>
+        <Typography
+          sx={{
+            fontFamily: "Pacifico",
+            fontSize: "30px",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+          }}
+        >
+          Beatrice <Typography  sx={{
+            fontFamily: "Pacifico",
+            fontSize: "30px",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+            color:(theme=> theme.palette.info.main)
+          }}>Wambui</Typography>
+        </Typography>
+      </Grid>
       <HeaderSubBox
         sx={{
           ":hover": {

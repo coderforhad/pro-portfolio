@@ -2,7 +2,7 @@ import { common } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
 import { error, indigo, info, neutral, success, warning } from './colors';
 
-export function createPalette() {
+export function createPalette(mode) {
   return {
     action: {
       active: neutral[500],
@@ -13,18 +13,18 @@ export function createPalette() {
       selected: alpha(neutral[900], 0.12)
     },
     background: {
-      default: common.white,
-      paper: common.white
+      default: mode === "dark" ? neutral[700] : "#F2F5F9",
+      paper: mode === "dark" ? neutral[900] : common.white
     },
     divider: '#F2F4F7',
     error,
     info,
-    mode: 'light',
+    mode,
     neutral,
     primary: indigo,
     success,
     text: {
-      primary: neutral[900],
+      primary: mode === "dark" ? common.white : neutral[900],
       secondary: neutral[500],
       disabled: alpha(neutral[900], 0.38)
     },

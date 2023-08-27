@@ -4,23 +4,22 @@ export const HeaderMainBox = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: "10px 11% 50px 10%",
+  padding: "10px 10% 20px 10%",
 });
 
-export const HeaderSubBox = styled("div")({
+export const HeaderSubBox = styled(Box)(({theme})=>({
   padding: "20px",
   borderRadius: "50%",
-  background: "#EBF2FA",
+  // background: "#EBF2FA",
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.25)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-});
+}));
 
-export const LayoutMainBox = styled(Box)({
-  background: "#F2F5F9",
+export const LayoutMainBox = styled(Box)(({theme})=> console.log("From style", theme) || ({
   height: "100%"
-});
+}));
 export const LayoutSubBox = styled(Box)({
   alignItems: "flex-start",
   justifyContent: "center",
@@ -39,14 +38,18 @@ export const TitleRole = styled(Typography)({
   fontStyle: "normal",
   fontWeight: 500,
   textAlign: "center",
-  color: "rgba(11, 9, 9, 0.50)",
+  // color: "rgba(11, 9, 9, 0.50)",
   padding: "8px 0px 0px 0px",
 });
-export const SocialGrid = styled(Grid)({
-  background: "#F2F7FC",
+export const SocialGrid = styled(Grid)(({theme})=>({
+  background: theme.palette.background.default,
+  ":hover": {
+    background: theme.palette.mode === "dark" ? theme.palette.info.contrastText : theme.palette.grey[400],
+  },
   borderRadius: "8.269px",
   padding: "10px",
-});
+  cursor:"pointer"
+}));
 
 export const InfoGrid = styled(Grid)({
   display: "flex",
@@ -54,36 +57,36 @@ export const InfoGrid = styled(Grid)({
   gap: "10px",
 });
 export const InfoTitle = styled(Typography)({
-  color: "rgba(26, 16, 3, 0.50)",
+  // color: "rgba(26, 16, 3, 0.50)",
   fontFamily: "Raleway",
   fontSize: "14px",
   fontWeight: 600,
 });
 export const Info = styled(Typography)({
-  color: "#000",
+  // color: "#000",
   fontFamily: "Raleway",
   fontSize: "14px",
   fontWeight: 600,
 });
 
-export const TopBox = styled(Box)({
+export const TopBox = styled(Box)(({theme})=>({
   float: "right",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   gap: "10px",
   padding: "10px",
-  background: "#F2F7FC",
+  background: theme.palette.background.paper,
   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.25)",
   borderRadius: "20px",
-});
+}));
 
 export const TopMenuBox = styled(Box)({
   textAlign: "center",
   width: "80px",
   height: "80px",
   borderRadius: "20px",
-  color: "#FFF",
+  // color: "#FFF",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

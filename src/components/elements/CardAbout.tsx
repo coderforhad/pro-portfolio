@@ -9,7 +9,7 @@ const CardAbout = ({ title, content, icon, color}) => {
         height: "100%",
         width:"542px",
         borderRadius: "20px",
-        background: `${color}`,
+        background: ((theme)=> theme.palette.mode === "dark" ? theme.palette.background.default : `${color}`),
         padding: "10px",
       }}
     >
