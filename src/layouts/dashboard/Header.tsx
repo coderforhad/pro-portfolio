@@ -12,6 +12,7 @@ const Header = () => {
   const handleClick = () => {
     const newThemeMode = themeMode === "light" ? "dark" : "light";
     setThemeMode(newThemeMode);
+    localStorage.setItem('themeMode', newThemeMode);
   };
   return (
     <HeaderMainBox>

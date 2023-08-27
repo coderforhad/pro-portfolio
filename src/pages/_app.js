@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { CacheProvider } from "@emotion/react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
@@ -19,7 +19,14 @@ const SplashScreen = () => null;
 
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const [themeMode, setThemeMode] = useState('light');
+  const [themeMode, setThemeMode] = useState("light");
+
+  useEffect(() => {
+    const savedThemeMode = localStorage.getItem("themeMode");
+    if (savedThemeMode) {
+      setThemeMode(savedThemeMode);
+    }
+  }, []);
 
   useNProgress();
 
@@ -44,8 +51,7 @@ const App = (props) => {
             <AuthConsumer>
               {(auth) => (
                 <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
-                  {auth.isLoading ? <SplashScreen /> : getLayout(
-                  <Component {...pageProps} />)}
+                  {auth.isLoading ? <SplashScreen /> : getLayout(<Component {...pageProps} />)}
                 </ThemeModeContext.Provider>
               )}
             </AuthConsumer>
