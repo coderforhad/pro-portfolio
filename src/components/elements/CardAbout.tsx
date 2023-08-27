@@ -7,7 +7,7 @@ const CardAbout = ({ title, content, icon, color}) => {
     <Box
       sx={{
         height: "100%",
-        width:"542px",
+        width:"49%",
         borderRadius: "20px",
         background: ((theme)=> theme.palette.mode === "dark" ? theme.palette.background.default : `${color}`),
         padding: "10px",

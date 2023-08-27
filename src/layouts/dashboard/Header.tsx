@@ -25,7 +25,7 @@ const Header = () => {
             gap: "5px",
           }}
         >
-          Beatrice{" "}
+          Forhad{" "}
           <Typography
             sx={{
               fontFamily: "Pacifico",
@@ -36,7 +36,7 @@ const Header = () => {
               color: (theme) => theme.palette.info.main,
             }}
           >
-            Wambui
+            Ahmed
           </Typography>
         </Typography>
       </Grid>
